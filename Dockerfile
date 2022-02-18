@@ -4,16 +4,6 @@ FROM r-base:4.0.5
 # Install Ubuntu packages
 RUN apt-get update && apt-get install -y \
     sudo \
-    gdebi-core \
-    pandoc \
-    pandoc-citeproc \
-    libcurl4-gnutls-dev \
-    libcairo2-dev/unstable \
-    libxt-dev \
-    libssl-dev \
-    libxml2-dev \
-    libnlopt-dev \
-    libudunits2-dev \
     git         
     
 # Install Shiny server
