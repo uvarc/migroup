@@ -3,6 +3,8 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 
+setwd('/project/MIGROUP/SDMS/Bi2Te2p7Se0p3/')
+
 df <- read_csv('Data_train_it3.csv')
 
 
