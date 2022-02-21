@@ -35,10 +35,14 @@ jobs:
     -
       name: Image digest
       run: echo $${{ steps.docker_build.outputs.digest }}
-Notify:
-  runs-on: ubuntu-latest
-  needs: Build
-  steps:
+      
+  notify:
+  
+    runs-on: ubuntu-latest
+    
+    needs: build
+    
+    steps:
     -
       name: Install awscli
       run: sudo pip install --upgrade pip && pip install awscli
