@@ -5,6 +5,8 @@ FROM r-base:4.0.5
 RUN apt-get update && apt-get install -y \
     sudo \
     gdebi-core \
+    pandoc \
+    pandoc-citeproc \
     git         
     
 # Install Shiny server
@@ -16,7 +18,6 @@ RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubu
     
 ##### Install R packages that are required ######
 ## CRAN packages
-ENV R_HOME=/usr/lib/R
 RUN R -e "install.packages(c('shiny','readr','dplyr','ggplot2'))"
 
 
