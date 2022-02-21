@@ -18,7 +18,8 @@ RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubu
     
 ##### Install R packages that are required ######
 ## CRAN packages
-ENV R_HOME /usr/lib/R
+ENV PATH=$PATH:/usr/lib/R/bin
+ENV R_HOME=/usr/lib/R
 RUN R -e "install.packages(c('shiny','readr','dplyr','ggplot2'))"
 
 
