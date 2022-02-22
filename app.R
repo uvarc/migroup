@@ -5,7 +5,7 @@ library(ggplot2)
 
 #setwd('/project/MIGROUP/SDMS/Bi2Te2p7Se0p3/')
 
-df <- read_csv('Data_train_it3.csv')
+df <- read_csv('/srv/shiny-server/data/SDMS/Bi2Te2p7Se0p3/Data_train_it3.csv')
 
 
 ui <- fluidPage(
