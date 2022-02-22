@@ -1,5 +1,5 @@
 # Install R version 4.0.5
-FROM r-base:4.0.5
+FROM r-base:4.1.2
 
 # Install Ubuntu packages
 RUN apt-get update && apt-get install -y \
@@ -19,7 +19,8 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     libtiff5-dev \
     libjpeg-dev \
-    git              
+    libgdal-dev \
+    git             
     
 # Install Shiny server
 RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-12.04/x86_64/VERSION -O "version.txt" && \
