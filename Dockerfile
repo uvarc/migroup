@@ -49,6 +49,7 @@ ENV R_HOME=/usr/lib/R
 ENV PATH=/usr/lib/R:/usr/lib/R/bin:$PATH
 EXPOSE 80
 WORKDIR /srv/shiny-server
+CMD mkdir /srv/shiny-server/data
 CMD R -e "options('shiny.port'=80,shiny.host='0.0.0.0');shiny::runApp('app.R')"
 
 #RUN chown shiny.shiny /usr/bin/shiny-server.sh && chmod 755 /usr/bin/shiny-server.sh
