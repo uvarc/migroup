@@ -18,7 +18,7 @@ RUN wget --no-verbose https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubu
     
 ##### Install R packages that are required ######
 ## CRAN packages
-ENV R_HOME=/usr/bin
+#ENV R_HOME=/usr/bin
 RUN R -e "install.packages(c('shiny','readr','dplyr','ggplot2'))"
 
 
@@ -34,10 +34,10 @@ RUN cp -r migroup/* /srv/shiny-server/
 
 # Make the ShinyApp available at port 80
 EXPOSE 80
-WORKDIR /srv/shiny-server
-CMD R -e "options('shiny.port'=80,shiny.host='0.0.0.0');shiny::runApp('app.R')"
+#WORKDIR /srv/shiny-server
+#CMD R -e "options('shiny.port'=80,shiny.host='0.0.0.0');shiny::runApp('app.R')"
 
-#RUN chown shiny.shiny /usr/bin/shiny-server.sh && chmod 755 /usr/bin/shiny-server.sh
+RUN chown shiny.shiny /usr/bin/shiny-server.sh && chmod 755 /usr/bin/shiny-server.sh
 
 # Run the server setup script
-#CMD ["/usr/bin/shiny-server.sh"]
+CMD ["/usr/bin/shiny-server.sh"]
